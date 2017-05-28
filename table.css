@@ -1,0 +1,12 @@
+
+    <style type="text/css">
+        table.mytable {
+            border: 3px solid #FF0000;
+        }
+        table.mytable > thead > tr > th {
+            font-size: 2em;
+        }
+        table.mytable > tbody > tr > td {
+            color: #999;
+        }
+    </style>

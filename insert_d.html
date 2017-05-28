@@ -1,0 +1,150 @@
+
+
+<html>
+
+
+<head>
+<script type="text/javascript">
+function showDiv() {
+   document.getElementById('mathimata').style.display = "block";
+}
+</script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            text-align: center;
+        }
+
+        input {
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 5px 10px;
+        }
+
+        }
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="menu_e.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+	
+</head>
+<body >
+
+<?php
+include_once "php_components/header.php"
+?>
+<div class="container">
+
+
+    <form role="form" action="insert_dt.php" method="POST" enctype="multipart/form-data">
+
+
+        <br>
+        <h3>Εισαγωγή νέας Διπλωματικής</h3>
+        Συμπληρώστε τα στοιχεία
+        Τίτλος Προτεινόμενης Διπλωματικής Εργασίας:
+        <input type="text" name="title">
+        <br>
+        Επιβλέπων Καθηγητής
+        <br>
+        Αριθμός Φοιτητών :
+        <input type="text" name="ar_foithtwn">
+        <br>
+        Στόχος Διπλωματικής Εργασίας :
+        <input type="text" name="stoxos">
+        <br>
+        Συνοπτική Περιγραφή Διπλωματικής Εργασίας :
+        <input type="text" name="perigrafh">
+        <br>
+        Προαπαιτούμενα Μαθήματα(Μέχρι 10) :
+		 <br>
+        (Επιλέξτε παραπάνω από ένα έχοντας πατημένο το κουμπί ctrl)
+        <br>
+
+        <!--       <button onclick="myFunction()">ADD</button>
+               <div id="box2" style="display: none;">
+
+
+
+                       Εξάμηνο 1ο
+                       <br>
+                       <input type="checkbox" name="vehicle" value="Λογική Σχεδίαση"> Λογική Σχεδίαση<br>
+                       Εξάμηνο 2ο
+                       <br>
+                       <input type="checkbox" name="vehicle" value="Πιθανότητες και Στατιστική" checked> Πιθανότητες και Στατιστική<br>-->
+
+<label for="mathimata">Μαθήματα</label>
+<select class="inputbox" name="mathimata[]" id="mathimata" style="width:180px;" multiple>
+Εξάμηνο 1
+    <option value="Black">Black</option>
+    <option value="White">White</option>
+    <option value="Tan">Tan</option>
+    <option value="Navy">Navy</option>
+    <option value="RoyalBlue">Royal Blue</option>
+    <option value="Red">Red</option>
+    <option value="Yellow">Yellow</option>
+    <option value="Hunter(DarkGreen)">Hunter(Dark Green)</option>
+    <option value="Kelly(Green)">Kelly(Green)</option>
+    <option value="Burgundy">Burgundy</option>
+ </select>
+
+<div id="mathimata"  style="display:none;" class="inputbox" ></div>
+<input type="button" name="mathimata[]" value="ADD" onclick="showDiv()" />
+        <br>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+        </div>
+        Προαπαιτούμενες γνώσεις:
+        <input type="textarea" name="gnwseis">
+        <br>
+        Στοιχεία Φοιτητών:
+        <br>
+        Όνομα:
+        <br>
+        Φοιτητής 1:
+        <input type="text" name="onoma_f">
+        <br>
+        Επώνυμο:
+        <input type="text" name="epitheto_f">
+        <br>
+        <br>
+        ICSD:
+        <input type="text" name="id_role_f">
+        <br>
+        Ημερομηνία Δημοσιοποίησης:
+        <input type="date" name="date_dhm">
+        <br>
+        Ημερομηνία Aνάλυψης:
+        <input type="date" name="date_an">
+        <br>
+        Ημερομηνία Ολοκλήρωσης:
+        <input type="date" name="date_olok">
+        <br>
+        <br>
+        Βαθμός:
+        <input type="text" name="vathmos">
+        <br>
+
+
+        <input type="submit" id="submit" name="submit" value="Δημιουργία εξέτασης">
+
+    </form>
+</div>
+</body>
+</html>

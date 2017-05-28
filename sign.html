@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+
+<HTML>
+
+<HEAD>
+<TITLE>Form</TITLE>  
+
+<SCRIPT LANGUAGE = "JavaScript">
+
+function setfocus()
+{
+	document.forms[0].myAge.focus();
+}
+
+
+function validate()
+{
+
+x=document.myForm;
+
+at=x.myEmail.value.indexOf("@");
+
+age=x.myAge.value;
+
+firstname=x.myName.value;
+pass=x.Password.value;
+
+var SpecCount;
+SpecCount = 0;
+if (pass.indexOf("!") > -1) {SpecCount ++;}
+if (pass.indexOf("@") > -1) {SpecCount ++;}
+if (pass.indexOf("#") > -1) {SpecCount ++;}
+if (pass.indexOf("$") > -1) {SpecCount ++;}
+if (pass.indexOf("%") > -1) {SpecCount ++;}
+if (pass.indexOf("^") > -1) {SpecCount ++;}
+if (pass.indexOf("&") > -1) {SpecCount ++;}
+if (pass.indexOf("*") > -1) {SpecCount ++;}
+if (pass.indexOf("(") > -1) {SpecCount ++;}
+if (pass.indexOf(")") > -1) {SpecCount ++;}
+if (pass.indexOf("~") > -1) {SpecCount ++;}
+if (pass.indexOf("`") > -1) {SpecCount ++;}
+if (pass.indexOf("?") > -1) {SpecCount ++;}
+if (SpecCount < 1)
+{alert("The passwords you have selected do not contain any special characters.");
+submitOK="False";}
+r=x.result.value;
+submitOK="True";
+
+if (at==-1) 
+ {
+ alert("Not a valid e-mail");
+ submitOK="False";
+ }
+if (age<1 || age>100)
+ {
+ alert("Your age must be between 1 and 100");
+ submitOK="False";
+ }
+if (pass.length<8 )
+ {
+ alert("Your password must be at least than 8 letters ");
+ submitOK="False";
+ }
+if (r<4||r>4 )
+ {
+ alert("Maybe you are a computer! ");
+ submitOK="False";
+ }
+if (submitOK=="False")
+ {
+ alert("Your data has not been validated");
+ return false;
+ }
+else {alert("Your data has been validated");}
+}
+
+
+</script>
+
+</HEAD>
+<BODY>
+
+<form name="myForm" action="" onsubmit="return validate()">
+<form method="post" name="contact_form"
+action="contact-form-handler.php">
+<input type="button" value="Set Focus" onclick="setfocus()"> 
+<br><br>
+ <h2>Registration</h2>
+e-mail: 
+<input type="text" name="myEmail"> 
+<br>
+Age: 
+<input type="text" name="myAge">
+<br>
+First name: 
+<input type="text" name="myName">
+<br>
+Last name :
+<input type="text" name="mySurname">
+<br>
+Give a password , at least 1 symbol and 8 letters  :
+<input type="password" name="Password">
+<br>
+2*2 = 
+<input type="text" name="result">
+<br>
+<input type="submit" value="submit"> 
+</form>
+
+</BODY>
+</HTML>  
